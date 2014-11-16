@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Perfil: <%= @user.full_name %></h2>
+
+<ul>
+	<li>Email: <%= @user.email %></li>
+	<li>Cpf: <%= @user.cpf %></li>
+</ul>
+
+<%= link_to 'Editar Perfil', edit_user_path(@user) %>
