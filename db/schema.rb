@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141114203000) do
+ActiveRecord::Schema.define(version: 20141117235205) do
 
   create_table "users", force: true do |t|
     t.string   "full_name"
     t.string   "email"
-    t.string   "password"
     t.string   "cpf"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password_digest"
   end
 
   add_index "users", ["cpf"], name: "index_users_on_cpf", unique: true
