@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero_documento: MyString
+  id_upload: MyString
+  notes: MyText
+
+two:
+  numero_documento: MyString
+  id_upload: MyString
+  notes: MyText
