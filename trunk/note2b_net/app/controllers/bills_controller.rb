@@ -25,6 +25,10 @@ class BillsController < ApplicationController
   # POST /bills.json
   def create
     @bill = Bill.new(bill_params)
+    uploaded_io = params[:doc]
+    File.open(Rails.root.join('public','uploads',uploaded_io.original_filename), "wb") do |file|
+      file.write(uploaded_io.read)
+    end
 
     respond_to do |format|
       if @bill.save
