@@ -12,19 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :numero_documento, "Número do Documento" %><br>
+    <%= f.label :numero_documento%><br>
     <%= f.text_field :numero_documento %>
   </div>
   <div class="field">
-    <%= f.label :id_upload, "Usuário fazendo o upload" %><br>
+    <%= f.label :id_upload%><br>
     <%= f.text_field :id_upload %>
   </div>
   <div class="field">
-    <%= f.label :notes , "Anotações"%><br>
+    <%= f.label :notes %><br>
     <%= f.text_area :notes %>
   </div>
   <div class = "field">
-    <%= label_tag :doc, "Upload do Documento" %>
+    <%= label_tag :doc %>
     <%= file_field_tag :doc %>
   </div>
   <div class="actions">

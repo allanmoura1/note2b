@@ -10,12 +10,12 @@
 <body>
 <header>
 	<div id="header-wrap">
-		<h1> Link para root TODO</h1>
-		<nav>
-			<ul>
-				<li><%= link_to "Cadastro", new_user_path %></li>
-			</ul>
-		</nav>
+		<h1><%= link_to "Note2b", root_path %></h1>
+		<% if user_signed_in? %>
+			<%= render 'layouts/user_navbar' %>
+		<% else %>
+			<%= render 'layouts/visitor_navbar' %>
+		<% end %>
 	</div>
 </header>
 

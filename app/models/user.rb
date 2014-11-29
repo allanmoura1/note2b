@@ -7,6 +7,12 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	def self.authenticate(cpf, password)
+		user = User.find_by(cpf: cpf)
+		if user.present?
+			user.authenticate(password)
+		end
+	end
 	private
 	def email_format
 		errors.add(:email, :invalid) unless email.match(EMAIL_REGEXP)
