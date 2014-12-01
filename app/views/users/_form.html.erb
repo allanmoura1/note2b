@@ -3,33 +3,50 @@
 		<%= t('general.form_error') %>
 	</div>
 <% end %>
+
+<div class='container'>
+<div class='card'>
+
 <%= form_for @user do |f| %>
+</br>
+
+	<div id = "fr">
 	<p>
 		<%= f.label :full_name%>
-		<%= f.text_field :full_name %>
+		<%= f.text_field :full_name, :placeholder => "Informe seu nome" %>
 		<%= error_tag @user, :full_name %>
 	</p>
+	</div>
+	</br>
 	<p>
 		<%= f.label :email %>
-		<%= f.text_field :email %>
+		<%= f.text_field :email, :placeholder => "Email: nome@hormail.com"%>
 		<%= error_tag @user, :email %>
 	</p>
+	</br>
 	<p>
 		<%= f.label :cpf %>
-		<%= f.text_field :cpf %>
+		<%= f.text_field :cpf, :placeholder => "Informe seu cpf"%>
 		<%= error_tag @user, :cpf %>
 	</p>
+	</br>
 	<p>
 		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<%= f.password_field :password, :placeholder => "Informe sua senha"%>
 		<%= error_tag @user, :password %>
 	</p>
+	</br>
 	<p>
 		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation %>
+		<%= f.password_field :password_confirmation, :placeholder => "Digite a senha novamente"%>
 		<%= error_tag @user, :password_confirmation %>
 	</p>
-	<p>
-		<%= f.submit %>
-	</p>
+	</br>
+	<div  class = "bot"><p>
+		<%= f.submit "Cadastrar"%>
+	</p></div>
+
+</div>
+</div>
+
 <% end %>

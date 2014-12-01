@@ -7,19 +7,28 @@
 <% end %>
 
 <%= form_for @user_session do |f| %>
+	
+	</br>
 	<p>
 		<%= f.label :cpf %>
 		<%= f.text_field :cpf %>
 		<%= error_tag @user_session, :cpf %>
 	</p>
+
+	</br>
 	<p>
 		<%= f.label :password %>
 		<%= f.password_field :password %>
 		<%= error_tag @user_session, :password %>
 	</p>
+	
+	</br>
 	<p>
-		<%= f.submit %>
+		<%= f.submit "Entrar"%>
 	</p>
 <% end %>
 
+	</br>
 <p><%= link_to t('.sign_up'), new_user_path %></p>
+
+

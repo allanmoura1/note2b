@@ -2,12 +2,13 @@
 <html>
 <head>
   	<title>Note2bNet</title>
-  	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Pacifico">
+  	<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
   	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   	<%= csrf_meta_tags %>
 </head>
 <body>
+<div id="interface">
 <header>
 	<div id="header-wrap">
 		<h1><%= link_to "Note2b", root_path %></h1>
@@ -19,7 +20,9 @@
 	</div>
 </header>
 
+<section id="corpo">
 <div id="content">
+    </br>
 	<% if notice.present? %>
 		<p id="notice"><%= notice %></p>
 	<% end %>
@@ -29,5 +32,13 @@
 
 	<%= yield %>	
 </div>
+</section>
+
+
+<footer id="rodape">
+	
+
+</footer>
+</div><!--div que fecha interface-->
 </body>
 </html>

@@ -1,5 +1,5 @@
-$header-height: 55px;
-$content-width: 700px;
+$header-height: 60px;
+$content-width: 300px;
 
 $serif-families: "Pacifico", "Georgia", serif;
 $sans-serif-families:"Helvetica", sans-serif;
@@ -23,7 +23,7 @@ body {background-color: #f5f5f5; }
 header {
 	@include shadow(#ccc, 0, 3px, 6px);
 
-	border-bottom: 1px solid #686;
+	border-top: 1px dotted #606060;
 	margin-bottom: 15px;
 
 	#header-warp {
@@ -32,12 +32,13 @@ header {
 	}
 
 	height: $header-height;
-	background-color: #9ECE71;
+	background-color: #1abc9c;
     h1 {
         float: left;
         a {
+            text-decoration: none; 
             color: #333;
-            font-family: $serif-families;
+            font-family: 'Dancing Script', cursive;
             font-weight: 400;
             font-size: 2.5em;
             &:hover {
@@ -59,19 +60,45 @@ header nav {
     li {
         display: inline-block;
         line-height: 24px;
-        background-color: #546f3c;
+        /*background-color: #546f3c;*/
         padding: 3px 10px;
 
         -moz-border-radius:5px;
         border-radius: 5px;
         vertical-align: middle;
         a {
+            text-decoration: none; 
             display: block;
-            font-size: 12px;
+            font-size: 15px;
             font-weight: 600;
             color: #fff;
+            transition: color 1s;
+            &:hover {
+                color:#000;
+            }
         }
     }
+}
+
+div#interface{
+     
+     margin: 0px auto auto auto;/*centraliza*/
+     /*box-shadow: 0px 0px 10px black;*/
+     padding: 0px;/*caso der erro no espaço*/
+    
+
+}
+
+section#corpo{
+    display: block;
+
+   
+
+}
+
+footer#rodape{
+    /*border-top: 1px solid #606060;*/
+  
 }
 
 #content {
@@ -92,6 +119,12 @@ header nav {
 
     ul, form, p {
         magin: 10px 0;
+    }
+
+    input:focus {
+        border-color: #35861B;
+        box-shadow: 0 0 5px #1abc9c;
+        outline: none;
     }
 }
 
@@ -167,4 +200,12 @@ form {
     border: 1px solid $error-text-color;
     @extend .padded_flash;
     background-color: #F2DEDE;
+}
+
+
+.bot{
+    
+
+    border: none;
+
 }
