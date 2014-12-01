@@ -1,4 +1,7 @@
+#Controle Provisório para testar a ferramenta de OCR
 class OcrController < ApplicationController
+
+	#Chamada da ferramenta de ocr em uma posição específica
 	def index
 		path = Rails.root + "public/uploads/teste4.jpg"
 		imagem = RTesseract::Mixed.new(path,{:lang => 'por', 
@@ -11,6 +14,7 @@ class OcrController < ApplicationController
 		redirect_to 'http://localhost:3000/bills/2'
 	end
 
+	#Chamada da ferramenta de ocr no documento completo
 	def index2
 		path = Rails.root + "public/uploads/image012.jpg"
 		image = RTesseract.new(path, :lang => "por")
