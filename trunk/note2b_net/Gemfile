@@ -29,6 +29,8 @@ gem 'rtesseract'
 gem 'bcrypt'
 gem 'mini_magick'
 gem "rmagick", "~> 2.13.1"
+gem 'bootstrap-sass'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
