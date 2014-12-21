@@ -1,5 +1,6 @@
 <h1><%= t '.title' %></h1>
 
+<div id = "login">
 <% if @user_session.errors.has_key? :base %>
 	<div id="error_explanation">
 		<%= @user_session.errors[:base].join(', ') %>
@@ -9,26 +10,27 @@
 <%= form_for @user_session do |f| %>
 	
 	</br>
-	<p>
+	
 		<%= f.label :cpf %>
-		<%= f.text_field :cpf %>
+		<%= f.text_field :cpf, :placeholder => "Informe seu cpf" %>
 		<%= error_tag @user_session, :cpf %>
-	</p>
+	
 
-	</br>
-	<p>
+	
+
 		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<%= f.password_field :password, :placeholder => "Informe sua senha" %>
 		<%= error_tag @user_session, :password %>
 	</p>
 	
 	</br>
-	<p>
-		<%= f.submit "Entrar"%>
-	</p>
-<% end %>
 
-	</br>
-<p><%= link_to t('.sign_up'), new_user_path %></p>
+
+	
+		<%= f.submit "Entrar", class: 'bot'%>    <%= link_to 'cadastrar', new_user_path , class: 'bot'%></p>
+		
+<% end %>
+</div>
+	
 
 

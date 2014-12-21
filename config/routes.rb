@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   resources :bills
   resources :users
+  
+
   get 'ocr/index'
   get 'ocr/index2'
   root 'home#index'
+  get 'home/index3'
+ 
 
-  resource :user_sessions, only: [:create,:new,:destroy]
+ resource :user_sessions, only: [:create,:new,:destroy]
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

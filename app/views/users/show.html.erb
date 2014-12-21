@@ -1,13 +1,12 @@
 <h1><%= t '.title', user_name: @user.full_name %></h1>
 
 <ul>
-	</br>
-	<li><%= t '.email', email: @user.email %></li>
-	</br>
+		<li><%= t '.email', email: @user.email %></li>
+
 	<li><%= t '.cpf', cpf: @user.cpf %></li>
 </ul>
 
 </br>
-<div class = "bot">
-<%= link_to t('.edit'), edit_user_path(@user) %>
+
+<%= link_to t('.edit'), edit_user_path(@user), class: 'bot' %>
 </div>
