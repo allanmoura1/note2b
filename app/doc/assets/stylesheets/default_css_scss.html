@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>default.css.scss - RDoc Documentation</title>
+
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../assets/javascripts/bills_js_coffee.html">bills.js.coffee</a>
+  
+    <li><a href="../../assets/javascripts/home_js_coffee.html">home.js.coffee</a>
+  
+    <li><a href="../../assets/javascripts/ocr_js_coffee.html">ocr.js.coffee</a>
+  
+    <li><a href="../../assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../assets/stylesheets/bills_css_scss.html">bills.css.scss</a>
+  
+    <li><a href="../../assets/stylesheets/default_css_scss.html">default.css.scss</a>
+  
+    <li><a href="../../assets/stylesheets/home_css_scss.html">home.css.scss</a>
+  
+    <li><a href="../../assets/stylesheets/ocr_css_scss.html">ocr.css.scss</a>
+  
+    <li><a href="../../assets/stylesheets/reset_css.html">reset.css</a>
+  
+    <li><a href="../../views/bills/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../views/bills/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page assets/stylesheets/default.css.scss">
+
+<p>$header-height:50px; $content-width: 500px;</p>
+
+<p>$serif-families:“Pacifico”,“Georgia,serif”;
+$sans-serif-families:“Helvetica”, sans-serif;</p>
+
+<p>$error-text-color: #B94A49; $sucess-text-color: #468847;</p>
+
+<p>@import &#39;bootstrap&#39;;</p>
+
+<p>photos-list {</p>
+
+<pre>padding: 0;
+margin: 0;
+margin-top: 30px;
+clear: both;
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  margin-bottom: 10px;
+  text-align: center;
+  p {
+    margin: 0;
+    margin-top: 10px;
+    height: 40px;
+    overflow: hidden;
+  }
+}</pre>
+
+<p>}</p>
+
+<pre> estilo geral da pagina aqui embaixo  
+{
+   font-family: $sans-serif-families;
+   font-size: 14px;</pre>
+
+<p>}</p>
+
+<pre>altera a cor da pagina em geral</pre>
+
+<p>body {background-color: ecf0f1</p>
+
+<p>}</p>
+
+<p>/*minin para facilitar a declaração de box-shadow, colocando  todos os
+vendor prefixes quando necessario*/ @mixin shadow($color,$x,$y, $radius){</p>
+
+<pre>-moz-box-shadow:    $color,$x,$y, $radius;
+-webkit-box-shadow: $color,$x,$y, $radius;
+box-shadow:         $color,$x,$y, $radius;</pre>
+
+<p>}</p>
+
+<p>/*aqui começamos a criar a barra de navegação que fica no topo. criamos a
+cor de fundo da barra e uma sombra na parte inferior. crimaos também o
+header_wrap, que é responsável pelo alinhamento do conteúdo da barra de
+navegação em conjunto com o conteúdo.*/</p>
+
+<p>header{</p>
+
+<pre>@include shadow(#ccc, 0, 3px, 6px);
+
+border-bottom: 15px solid #9b59b6;
+margin-bottom: 15px;
+
+#header-wrap{
+    widt: $content-width;
+    margin: 0 auto;
+}
+
+height: $header-height;/*aqui escolhemos o tamanho da borda*/
+background-color: #1abc9c;/*aqui escolhemos a cor da borda*/</pre>
+
+<p>/*começamos aqui a alterar o esquema das letras, cores*/</p>
+
+<pre>h1{
+    float: left;/*reorganiza menu e logotipo dentro do cabeçalho*/
+        a{
+            text-decoration: none;
+            color: #333;
+            font-family: &#39;Dancing Script&#39;, cursive;/*font buscada no google fonts*/
+            font-weight: 400;
+            font-size: 2.5em;
+            text-shadow:1px 1px 1px rgba(0,0,0,.9);
+               &amp;:hover {
+                    transition: color 1s;
+                    color: #fff;
+               }
+        }
+    }</pre>
+
+<p>}</p>
+
+<p>/*Segunda parte da barra superior, o estilo do menu de navegaç;o*/</p>
+
+<p>header nav{</p>
+
+<pre>float: right;/*leva menu para canto superior direito*/
+
+ul{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 55px;
+}
+
+li{
+
+    display: inline-block;
+    line-height: 24px;
+    /*background-color: #546f3c; cor do botao*/
+    padding: 3px 10px;/*tamanho e espaçamento dos botoes*/
+}
+
+-moz-border-radius: 5px;
+border-raidus: 5px;
+vertical-align: middle;
+
+a{
+    text-decoration: none;
+    display: block;
+    font-size: 17px;/*tamanho da letra do menu*/
+    font-weight: 500;
+    color: #fff;
+    transition: color 1s;
+        &amp;:hover{
+            color: #333;
+        };
+}</pre>
+
+<p>}</p>
+
+<p>/*o estilo do conteúdo das páginas ficará dentro da div com id content*/</p>
+
+<p>content{</p>
+
+<pre>text-align: left;
+border-top: 1px solid #16a085;
+margin: 0 auto;
+
+h1{/*aqui muda o titulo principal*/
+    font-size: 2em;
+    color: #34495e;
+    margin: 10px 7px;
+}
+
+h2{
+    font-size: 1.5em;
+    color: #34495e;
+    margin: 10px 7px;
+}
+
+a,a:visited, a:hover{
+    color: #242;
+
+     &amp;:hover{
+        text-decoration:underline;
+     }
+}
+p{
+    margin: 10px 10px; 
+    text-align: justify;
+    text-indent: 50px;
+
+}
+
+ul, form{
+    margin: 10px 10px; 
+    text-align: justify;      
+}</pre>
+
+<p>input:focus {</p>
+
+<pre>    border-color: #35861B;
+    box-shadow: 0 0 5px #1abc9c;
+    outline: none;
+}</pre>
+
+<p>}</p>
+
+<p>/*para o formulario, temos o seguinte css:*/ form{</p>
+
+<pre>label{
+    display: block;
+    margin: 5px 0;
+    color:#34495e;/*cor da letra do formulario*/
+}
+
+input[type=text], input[type=password], textarea{
+    color: #444;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    width: 200px;
+    outline: 0;
+
+    @include shadow(rgba(0,0,0, 0.2), 0px, 0px, 8px);
+    &amp;:focus {
+        border: 1px solid #1abc9c;
+    }
+}
+
+textarea{
+    width: 400px;
+    height: 200px;
+}</pre>
+
+<p>}</p>
+
+<p>/*classes relacionadas com a informação de erros e flash*/
+.fields_with_errors {</p>
+
+<pre>display: inline;
+
+label { color: $error-text-color; }
+
+input[type=text], input[type=password], textarea {
+    border: 1px solid rgba(189,74,72, 0.5);
+    @include shadow(rgba(189,74,72, 0.2), 0px, 0px, 8px);
+
+    &amp;:focus{ border: 1px solid rgba(189,74,72,0.6); }
+}</pre>
+
+<p>}</p>
+
+<p>.error_message {</p>
+
+<pre>margin-left: 5px;
+display: inline;
+color: $error-text-color;</pre>
+
+<p>}</p>
+
+<p>.padded_flash {</p>
+
+<pre>padding: 10px;
+margin: 10px 0;
+font-weight: bold;
+width: 500px;</pre>
+
+<p>}</p>
+
+<p>error_explanation{</p>
+
+<pre>border:1px solid $error-text-color;
+color: $error-text-color;
+background-color: #F2DEDE;
+@extend .padded_flash;</pre>
+
+<p>}</p>
+
+<p>notice {</p>
+
+<pre>color: $sucess-text-color;
+border: 1px solid $sucess-text-color;
+@extend .padded_flash;
+background-color: #DFF0D8;</pre>
+
+<p>}</p>
+
+<p>alert {</p>
+
+<pre>color: $error-text-color;
+border: 1px solid $error-text-color;
+@extend .padded_flash;
+background-color: #F2DEDE;</pre>
+
+<p>}</p>
+
+<p>.bot{</p>
+
+<pre>background-color: #1abc9c;
+background-image: linear-gradient(to bottom, #1abc9c, #1abc9c);
+border: 1px solid #1abc9c;
+border-radius: 3px;
+color: 000;
+
+font-size: 0.8em;
+font-weight: bold;
+padding: 5px 10px;
+
+border: none;</pre>
+
+<p>}</p>
+
+<p>.bot:hover {</p>
+
+<pre>    transition: color 1s;
+    text-decoration: underline;
+    background-color: #16a085;
+    background-image: linear-gradient(to bottom, #16a085, #16a085);
+    border-color: #16a085;
+}</pre>
+
+<p>ul#album{</p>
+
+<pre>margin: 0 auto;
+overflow: hidden;
+padding: 20px;
+list-style: none;</pre>
+
+<p>}</p>
+
+<p>ul#album li{</p>
+
+<pre>float: left;
+width: 200px;
+height: 200px;
+margin: 10px;
+border: 5px solid #ffffff;
+background-color: #ffffff;
+box-shadow: 1px 1px 3px rgba(0,0,0,.4);
+-webkit-transition:all 0.5s ease-in;</pre>
+
+<p>}</p>
+
+<p>ul#album li span{</p>
+
+<pre>opacity: 0;
+color: #ffffff;
+text-shadow: 1px 1px 1px #000000;
+font-size: 9pt;
+line-height: 370px;
+padding: 5px;
+background-color: rgba(0,0,0,.3);</pre>
+
+<p>}</p>
+
+<p>ul#album li:hover{</p>
+
+<pre>-webkit-transform:scale(1.3);</pre>
+
+<p>}</p>
+
+<p>ul#album li:hover span{</p>
+
+<pre>opacity: 1;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto01{</p>
+
+<pre>background-image:image-url(&quot;Armando.jpg&quot;); 
+background-position: 50% 50%;
+background-size: 400px 400px;
+background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto02{</p>
+
+<pre>background-image:image-url(&quot;Rafael.jpg&quot;); 
+background-position: 50% 50%;
+background-size: 400px 400px;
+background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto03{</p>
+
+<pre>background-image:image-url(&quot;Allan.jpg&quot;); 
+background-position: 50% 50%;
+background-size: 400px 400px;
+background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto04{</p>
+
+<pre>background-image:image-url(&quot;Lucas.jpg&quot;); 
+background-position: 50% 50%;
+background-size: 400px 400px;
+background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto05{</p>
+
+<pre>background-image:image-url(&quot;Joaquim.jpg&quot;); 
+background-position: 50% 50%;
+background-size: 400px 400px;
+background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto06{</p>
+
+<pre>background-image:image-url(&quot;Diego.jpg&quot;); 
+background-position: 50% 50%;
+background-size: 400px 400px;
+background-color: #ffffff;</pre>
+
+<p>}</p>
+
+<p>ul#album li#foto01:hover{</p>
+
+<pre>background-position: 0px 0px;
+background-size: 200px 200px;</pre>
+
+<p>}</p>
+
+<p>section#corp{</p>
+
+<pre>display: block;</pre>
+
+<p>}</p>
+
+<p>footer#rodape p{</p>
+
+<pre>text-align: center;</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
