@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'ocr/index'
   get 'ocr/index2'
   get 'ocr/full'
+  get 'ocr/template'
   root 'home#index'
   get 'home/index3'
  
