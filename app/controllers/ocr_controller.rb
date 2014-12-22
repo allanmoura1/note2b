@@ -6,8 +6,9 @@ class OcrController < ApplicationController
 		path = Rails.root + "public/uploads/teste4.jpg"
 		imagem = RTesseract::Mixed.new(path,{:lang => 'por', 
 			:areas =>[
-			{:x=>185, :y=>572, :width=>625, :height=>75	}
-			]
+			{:x=>185, :y=>572, :width=>625, :height=>75	},
+			{:x=>1300, :y=>300, :width=>130,:height=>20},
+			{:x=>1335, :y=>843, :width=>100,:height=>21}]
 		})
 		@text = imagem.to_s
 		flash[:ocr] = @text
@@ -30,5 +31,21 @@ class OcrController < ApplicationController
 		@text = imagem.to_s
 		flash[:ocr] = @text
 		redirect_to 'http://localhost:3000/bills/3'
+	end
+
+	def template
+		@photo = Photo.find(params[:id])
+		path = Rails.root + "public/system/dragonfly/development" + @photo.image_uid		
+		imagem = RTesseract::Mixed.new(path,{:lang => 'por', 
+			:areas =>[
+			{:x=>185, :y=>572, :width=>625, :height=>75	},
+			{:x=>1300, :y=>300, :width=>130,:height=>20},
+			{:x=>1335, :y=>843, :width=>100,:height=>21}]
+		})
+		image = imagem.to_s
+		flash[:ocr] = image
+		redirect_to new_bill_path
+
+
 	end
 end
