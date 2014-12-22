@@ -7,7 +7,8 @@ $sans-serif-families:"Helvetica", sans-serif;
 $error-text-color: #B94A49;
 $sucess-text-color: #468847;
 
-@import 'bootstrap';
+
+/*@import 'bootstrap';*/
 
 #photos-list {
   padding: 0;
@@ -84,6 +85,7 @@ header{
                 text-shadow:1px 1px 1px rgba(0,0,0,.9);
                    &:hover {
                         transition: color 1s;
+                        text-decoration: none;
                         color: #fff;
                    }
             }
@@ -276,6 +278,29 @@ form{
         border-color: #16a085;
     }
 
+.bot2{
+    background-color: #1abc9c;
+    background-image: linear-gradient(to bottom, #1abc9c, #1abc9c);
+    border: 1px solid #1abc9c;
+    border-radius: 3px;
+    color: 000;
+
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 10px;
+    border: none;
+}
+
+.bot2:hover {
+        transition: color 1s;
+        text-decoration: underline;
+        background-color: #16a085;
+        background-image: linear-gradient(to bottom, #16a085, #16a085);
+        border-color: #16a085;
+    }
+
+
 ul#album{
    
     margin: 0 auto;
@@ -305,7 +330,7 @@ ul#album li span{
     background-color: rgba(0,0,0,.3);
 }
 
-ul#album li:hover{
+ul#album li:hover {
     -webkit-transform:scale(1.3);
 }
 

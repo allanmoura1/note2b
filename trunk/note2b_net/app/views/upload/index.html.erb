@@ -1,11 +1,14 @@
-<h1>app/view/upload/index</h1>
+<h1>Upload de arquivo</h1>
  
 <%= form_for @photo, url: 'upload#create', html: {method: :post} do |f| %>
   <div class="form-group">
-    <%= f.label 'Escolha o documento para upload' %>
+  	</div>
+  	<br>
+    <h2><%= f.label 'Escolha o documento para upload' %></h2>
+    </br>
     <%= f.file_field :image, required: true %>
   </div>
  	
   <br>
-  <%= f.submit 'Fazer Upload', class: 'btn btn-primary btn-lg' %>
+  <%= f.submit 'Fazer Upload', class: 'bot2' %>
 <% end %>

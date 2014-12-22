@@ -1,11 +1,11 @@
-<h1>Show</h1>
+<h1>Imagem selecionada</h1>
 
 <div class="row" id="photos-list">
 	<%= image_tag(@photo.image.thumb('450x300#').url) %>
 </div>
 
 <div>
-	<%= link_to 'ocr', controller: "ocr", action: "full", id: @photo.id %></li>
+	<%= link_to 'ocr', controller: "ocr", action: "full", id: @photo.id, class: 'bot'%>
 </div>
 
 
