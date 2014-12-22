@@ -30,6 +30,10 @@ gem 'bcrypt'
 gem 'mini_magick'
 gem "rmagick", "~> 2.13.1"
 gem 'bootstrap-sass'
+gem 'dragonfly'
+group :production do
+	gem 'rack-cache', :require => 'rack/cache'
+end
 
 
 # Use ActiveModel has_secure_password

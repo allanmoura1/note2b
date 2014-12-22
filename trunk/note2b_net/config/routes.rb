@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   resources :bills
   resources :users
+  resources :upload, only: [:index, :create, :show]
+  #resources :upload
   
 
   get 'ocr/index'
   get 'ocr/index2'
+  get 'ocr/full'
   root 'home#index'
   get 'home/index3'
  
