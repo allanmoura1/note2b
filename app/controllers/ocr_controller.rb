@@ -22,4 +22,13 @@ class OcrController < ApplicationController
 		flash[:ocr] = @text
 		redirect_to 'http://localhost:3000/bills/2'
 	end
+
+	def full
+		@photo = Photo.find(params[:id])
+		path = Rails.root + "public/system/dragonfly/development" + @photo.image_uid		
+		imagem = RTesseract.new(path, :lang => "por")
+		@text = imagem.to_s
+		flash[:ocr] = @text
+		redirect_to 'http://localhost:3000/bills/3'
+	end
 end

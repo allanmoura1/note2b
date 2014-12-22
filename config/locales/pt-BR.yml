@@ -27,6 +27,7 @@ pt-BR:
     alert:
       needs_login: "Voce precisa estar logado para continuar"
     notice:
+      upload_sucess: "Upload realizado com sucesso!"
       signed_in: 'Login efetuado com sucesso!'
       signed_out: 'Logout efetuado com sucesso. Até logo!'
       already_logged_in: "Você já está logado."
