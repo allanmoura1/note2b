@@ -1,12 +1,12 @@
 <h1>Show</h1>
 
-<div class="row" id="photos-list">
+<div id = "fotoOCR">
 	<%= image_tag(@photo.image.thumb('450x300#').url) %>
 </div>
 
 <div>
-	<%= link_to 'OCR TEMPLATE', controller: "ocr", action: "template", id: @photo.id%>
-	<%= link_to 'OCR FULL', controller: "ocr", action: "full", id: @photo.id %>
+	<h3><%= link_to 'OCR TEMPLATE', controller: "ocr", action: "template", id: @photo.id%>
+	<%= link_to 'OCR FULL', controller: "ocr", action: "full", id: @photo.id %></h3>
 </div>
 
 
