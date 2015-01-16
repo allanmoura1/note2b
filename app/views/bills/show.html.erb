@@ -4,15 +4,9 @@
   <strong>Numero documento:</strong>
   <%= @bill.numero_documento %>
 </p>
-
-<p>
-  <strong>Id upload:</strong>
-  <%= @bill.id_upload %>
-</p>
-
 <p>
   <strong>Notes:</strong>
-  <%= flash[:ocr] %>
+  <%= @bill.notes %>
 </p>
 
 <%= link_to 'Edit', edit_bill_path(@bill) %> |

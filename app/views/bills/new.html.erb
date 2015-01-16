@@ -14,8 +14,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :numero_documento%>
-    <%= f.text_field :numero_documento %>
+    <%= f.label :numero_documento %>
+    <%= f.text_field :numero_documento, :value => flash[:nf] %>
   </div>
   <div class="field">
     <%= f.label :id_upload%>
@@ -25,14 +25,16 @@
     <%= f.label :notes %>
     <%= f.text_area :notes, :value => flash[:ocr] %>
   </div>
-  <div class = "field">
-    <%= label_tag :doc %>
-    <%= file_field_tag :doc %>
-  </div>
   <div class="actions">
-    <%= f.submit 'Fazer Upload' %>
+    <%= f.submit %>
   </div>
 <% end %>
 
 
-<%= link_to 'Back', bills_path %>
+<%= button_to 'Back', "",:id => "Back" %>
+<script>
+  $("#Back").click(function(){
+    parent.history.back();
+    return false;
+  }
+</script>
