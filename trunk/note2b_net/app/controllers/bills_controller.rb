@@ -1,11 +1,18 @@
 #Em desenvolvimento
 class BillsController < ApplicationController
   before_action :set_bill, only: [:show, :edit, :update, :destroy]
+  before_action :can_change, only: [:edit, :update]
+  before_action :require_authentication
 
   # GET /bills
   # GET /bills.json
   def index
-    @bills = Bill.all
+    if params[:search].present?
+      @bills = Bill.search(params[:search])
+        unless @bills.present?
+          flash[:notice] = "Ai dentro diego"
+        end
+    end
   end
 
   # GET /bills/1
@@ -26,19 +33,11 @@ class BillsController < ApplicationController
   # POST /bills.json
   def create
     @bill = Bill.new(bill_params)
-    uploaded_io = params[:doc]
-    File.open(Rails.root.join('public','uploads',uploaded_io.original_filename), "wb") do |file|
-      file.write(uploaded_io.read)
-    end
-
-    respond_to do |format|
-      if @bill.save
-        format.html { redirect_to @bill, notice: 'Bill was successfully created.' }
-        format.json { render :show, status: :created, location: @bill }
-      else
-        format.html { render :new }
-        format.json { render json: @bill.errors, status: :unprocessable_entity }
-      end
+    if @bill.save
+      redirect_to @bill, 
+      notice: 'Documento salvo com sucesso!'
+    else
+      render action: :new
     end
   end
 

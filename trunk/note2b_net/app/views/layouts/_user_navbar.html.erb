@@ -1,6 +1,9 @@
 <nav>
 	<ul>
 		<li>
+			<%= link_to 'Upload', controller: "upload", action: "index" %>
+		</li>
+		<li>
 		
 			<%= link_to t('layout.my_profile'),
 				user_path(current_user) %>

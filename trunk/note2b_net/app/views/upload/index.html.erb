@@ -1,4 +1,17 @@
 <h1>Upload de arquivo</h1>
+
+<!--<% if @photo.errors.any? %>
+	<div id="error_explanation">
+		<%= t('general.form_error') %>
+		<ul>
+			<% @photo.errors.each do |message| %>
+			<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+-->
+	
  
 <%= form_for @photo, url: 'upload#create', html: {method: :post} do |f| %>
   <div class="form-group">
