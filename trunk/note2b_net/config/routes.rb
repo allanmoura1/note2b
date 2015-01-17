@@ -9,8 +9,12 @@ Rails.application.routes.draw do
   get 'ocr/index2'
   get 'ocr/full'
   get 'ocr/template'
+  post 'ocr/full'
+  post 'ocr/template'
   root 'home#index'
   get 'home/index3'
+
+  match "gerenciador_de_documentos" => "bills#index", via: [:get, :post], :as => "gerenciador_de_documentos"
  
 
  resource :user_sessions, only: [:create,:new,:destroy]

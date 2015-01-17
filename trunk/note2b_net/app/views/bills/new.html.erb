@@ -1,4 +1,4 @@
-<h1>New bill</h1>
+<h1>Novo Documento</h1>
 
 <%= form_for(@bill,:html => {:multipart =>true}) do |f| %>
   <% if @bill.errors.any? %>
@@ -13,28 +13,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :numero_documento %>
-    <%= f.text_field :numero_documento, :value => flash[:nf] %>
+  <div class="form-group">
+    <div class="input-group">
+      <%= f.label :numero_documento %>
+      <%= f.text_field :numero_documento, :value => flash[:nf], :class => "form-control" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :id_upload%>
-    <%= f.text_field :id_upload %>
-  </div>
-  <div class="field">
+
+  <div class="form-group">
+    <div class="input-group">
     <%= f.label :notes %>
-    <%= f.text_area :notes, :value => flash[:ocr] %>
+    <%= f.text_area :notes, :cols => "30", :rows => "10", :value => flash[:ocr], :class => "form-control" %>
+    </div>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+  <ul class="list-inline">
+    <li><%= f.submit "Finalizar", :class => "btn btn-success" %></li>
+  </ul>
+
 <% end %>
-
-
-<%= button_to 'Back', "",:id => "Back" %>
-<script>
-  $("#Back").click(function(){
-    parent.history.back();
-    return false;
-  }
-</script>

@@ -12,16 +12,12 @@
 <% end %>
 -->
 	
- 
 <%= form_for @photo, url: 'upload#create', html: {method: :post} do |f| %>
-  <div class="form-group">
-  	</div>
-  	<br>
-    <h2><%= f.label 'Escolha o documento para upload' %></h2>
-    </br>
-    <%= f.file_field :image, required: true %>
-  </div>
- 	
-  <br>
-  <%= f.submit 'Fazer Upload', class: 'bot2' %>
+	<div class="form-group">
+		<div class="input-group">
+    		<%= f.label 'Escolha o documento para upload' %>
+    		<%= f.file_field :image, required: true %>
+    	</div>
+    </div>	
+  <%= f.submit 'Fazer Upload', class: 'btn btn-success' %>
 <% end %>

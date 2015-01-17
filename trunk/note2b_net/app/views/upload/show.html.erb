@@ -1,12 +1,11 @@
-<h1>Show</h1>
+<h1>Visualização</h1>
 
-<div id = "fotoOCR">
-	<%= image_tag(@photo.image.thumb('450x300#').url) %>
-</div>
+<%= image_tag(@photo.image.thumb('450x300#').url, :class => "shadow-border") %>
 
-<div>
-	<h3><%= link_to 'OCR TEMPLATE', controller: "ocr", action: "template", id: @photo.id%>
-	<%= link_to 'OCR FULL', controller: "ocr", action: "full", id: @photo.id %></h3>
-</div>
+
+<ul class="list-inline", style="margin-top: 20px;">
+	<li><%= button_to 'OCR TEMPLATE', {controller: "ocr", action: "template", id: @photo.id}, {:class => "btn btn-success"} %></li>
+	<li><%= button_to 'OCR FULL', {controller: "ocr", action: "full", id: @photo.id}, {:class => "btn btn-success"} %></li>
+</ul>
 
 
