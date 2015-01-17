@@ -1,6 +1,5 @@
 <h1><%= t '.title' %></h1>
 
-<div id = "login">
 <% if @user_session.errors.has_key? :base %>
 	<div id="error_explanation">
 		<%= @user_session.errors[:base].join(', ') %>
@@ -8,29 +7,25 @@
 <% end %>
 
 <%= form_for @user_session do |f| %>
-	
-	</br>
-	
-		<%= f.label :cpf %>
-		<%= f.text_field :cpf, :placeholder => "Informe seu cpf" %>
-		<%= error_tag @user_session, :cpf %>
-	
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :cpf %>
+			<%= f.text_field :cpf, :placeholder => "Informe seu cpf", :class => "form-control" %>
+			<%= error_tag @user_session, :cpf %>
+		</div>
+	</div>
 
-	
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :password %>
+			<%= f.password_field :password, :placeholder => "Informe sua senha", :class => "form-control"%>
+			<%= error_tag @user_session, :password %>
+		</div>
+	</div>
 
-		<%= f.label :password %>
-		<%= f.password_field :password, :placeholder => "Informe sua senha" %>
-		<%= error_tag @user_session, :password %>
-	</p>
-	
-	</br>
+	<ul class="list-inline">
+		<li><%= f.submit "Entrar", class: 'btn btn-success'%></li>   
+		<li><%= link_to 'Cadastrar', new_user_path , class: 'btn btn-success'%></li>
+	<ul>
 
-
-	
-		<%= f.submit "Entrar", class: 'bot'%>    <%= link_to 'cadastrar', new_user_path , class: 'bot'%></p>
-		
 <% end %>
-</div>
-	
-
-

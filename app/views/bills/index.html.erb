@@ -1,20 +1,19 @@
-<h1>Listing bills</h1>
+<h1>Pesquisar Documento</h1>
 
 <br>
 
-<%= form_tag(bills_path, :method => "get") do %>
+<%= form_tag(bills_path, :method => "get", :class => "form-inline") do %>
   <div class = "input-append">
-    <%= text_field_tag :search %>
-    <button class="btn" type="submit">Pesquisar</button>
+    <%= text_field_tag :search , nil , :class => "form-control" %>
+    <button class="btn" type="submit">Pesquisar <i class="glyphicon glyphicon-search"></i></button>
   </div>
 <% end %>
 
-<% if params[:search] %>
+<% if params[:search].present? %>
    <table>
   <thead>
     <tr>
       <th>Numero documento</th>
-      <th>Id upload</th>
       <th>Notes</th>
       <th colspan="3"></th>
     </tr>
@@ -24,19 +23,10 @@
     <% @bills.each do |bill| %>
       <tr>
         <td><%= bill.numero_documento %></td>
-        <td><%= bill.id_upload %></td>
-        <td><%= bill.notes %></td>
-        
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bill.notes %></td>   
+        <td><%= link_to 'Ver', bill %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
   <% end %>
-
-
-
-
-<%= link_to 'New Bill', new_bill_path %>

@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+.title_name {
+	font-family: 'Roboto', sans-serif;
+}
+
+.shadow-border {
+	margin-top: 20px;
+	-webkit-box-shadow: 0px 1px 17px 11px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 1px 17px 11px rgba(0,0,0,0.75);
+	box-shadow: 0px 1px 17px 11px rgba(0,0,0,0.75);
+}

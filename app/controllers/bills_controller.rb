@@ -8,10 +8,14 @@ class BillsController < ApplicationController
   # GET /bills.json
   def index
     if params[:search].present?
-      @bills = Bill.search(params[:search])
-        unless @bills.present?
-          flash[:notice] = "Ai dentro diego"
-        end
+      if params.has_key?(:search)
+        @bills = Bill.all
+      else
+        @bills = Bill.search(params[:search])
+          unless @bills.present?
+            flash[:alert] = "Nenhum resultado encontrado."
+          end
+      end
     end
   end
 

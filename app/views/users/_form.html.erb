@@ -4,55 +4,53 @@
 	</div>
 <% end %>
 
-<div class='container' >
-<div class='card'>
-
 <%= form_for @user do |f| %>
-</br>
-
-
-	<div id = "fr">
-			<%= f.label :full_name%>
-		<%= f.text_field :full_name, :placeholder => "Informe seu nome" %>
-		<%= error_tag @user, :full_name %>
 	
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :full_name%>
+			<%= f.text_field :full_name, :placeholder => "Informe seu nome", :class => "form-control" %>
+			<%= error_tag @user, :full_name %>
+		</div>
 	</div>
 
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :email %>
+			<%= f.text_field :email, :placeholder => "Email: nome@hotmail.com", :class => "form-control"%>
+			<%= error_tag @user, :email %>			
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :cpf %>
+			<%= f.text_field :cpf, :placeholder => "Informe seu cpf", :class => "form-control"%>
+			<%= error_tag @user, :cpf %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :password %>
+			<%= f.password_field :password, :placeholder => "Informe sua senha", :class => "form-control"%>
+			<%= error_tag @user, :password %>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="input-group">
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation, :placeholder => "Digite a senha novamente", :class => "form-control"%>
+			<%= error_tag @user, :password_confirmation %>
+		</div>
+	</div>
 	
-		<%= f.label :email %>
-		<%= f.text_field :email, :placeholder => "Email: nome@hotmail.com"%>
-		<%= error_tag @user, :email %>
-	
-
-	
-		<%= f.label :cpf %>
-		<%= f.text_field :cpf, :placeholder => "Informe seu cpf"%>
-		<%= error_tag @user, :cpf %>
-	
-
-	
-		<%= f.label :password %>
-		<%= f.password_field :password, :placeholder => "Informe sua senha"%>
-		<%= error_tag @user, :password %>
-	
-
-	
-		<%= f.label :password_confirmation %>
-		<%= f.password_field :password_confirmation, :placeholder => "Digite a senha novamente"%>
-		<%= error_tag @user, :password_confirmation %>
-	</p>
-
+	<ul class="list-inline">
+		<li><%= f.submit "Cadastrar", class: 'btn btn-success'%> </li>
+	</ul>
 	
 
 
-		<%= f.submit "Cadastrar", class: 'bot'%> 
 
-
-		
-	
-
-
-</div>
-</div>
 
 <% end %>
